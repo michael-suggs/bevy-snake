@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 use std::time::Duration;
+use super::*;
 
 pub struct SnakeHead {
     pub direction: Direction,
@@ -12,8 +13,14 @@ pub struct Materials {
 }
 
 pub struct SnakeSegment;
+
 #[derive(Default)]
 pub struct SnakeSegments(pub Vec<Entity>);
+
+#[derive(Default)]
+pub struct LastTailPosition(pub Option<grid::Position>);
+
+pub struct GrowthEvent;
 
 pub struct Food;
 pub struct FoodSpawnTimer(pub Timer);
